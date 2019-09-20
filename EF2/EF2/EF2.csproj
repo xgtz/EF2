@@ -90,9 +90,9 @@
     <Compile Include="Common\Token.cs" />
     <Compile Include="Common\TokenResultMsg.cs" />
     <Compile Include="Common\WebApiHelper.cs" />
-    <Compile Include="Configuration\StudentConfiguration.cs" />
-    <Compile Include="Configuration\TeacherConfiguration.cs" />
-    <Compile Include="Configuration\UserConfiguration.cs" />
+    <Compile Include="EntityConfig\StudentConfiguration.cs" />
+    <Compile Include="EntityConfig\TeacherConfiguration.cs" />
+    <Compile Include="EntityConfig\UserConfiguration.cs" />
     <Compile Include="Context\BFDbContext.cs" />
     <Compile Include="Context\TeacherContext.cs" />
     <Compile Include="Context\TestContext.cs" />
@@ -149,6 +149,9 @@
   <ItemGroup>
     <Content Include="sql\sql2.txt" />
     <Content Include="sql\sql1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
