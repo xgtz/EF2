@@ -51,6 +51,7 @@ namespace EF2.Service
 
                         //Include只能用于导航属性的联合查询，他的参数是导航属性的名称
                         var a = context.Person.Where(r => r.Id == 1).Include("Nationality").SingleOrDefault();
+                        //context.Entry(a).Property(p => p.Name).IsModified = true;
                         Console.WriteLine(string.Format("根据导航属性查询的国家:",a.Id,a.Name));
                         var b = context.Nationality.First().Persons.ToList();
 

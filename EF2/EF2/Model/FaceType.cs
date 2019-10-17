@@ -12,7 +12,7 @@ namespace EF2.Model
 
         public string Name { get; set; }
 
-        //public ICollection<Face> Faces { get; set; }
+        public ICollection<Face> Faces { get; set; }
 
 
     }

@@ -37,6 +37,10 @@ namespace EF2.Context
         public TestContext()
             : base("name=OracleDbContext")
         {
+            // 查询默认情况下会进行【语义可空】筛选
+            // 利用值查询在WHERE条件上没有过多的条件过滤，而利用参数查询则是生成过多的条件筛选
+            // 关闭语义可空判断
+            Configuration.UseDatabaseNullSemantics = true;
         }
 
         //public TestContext()

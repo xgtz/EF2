@@ -84,6 +84,7 @@ namespace EF2.Service
                         //Console.WriteLine("ExecuteSqlCommand影响的行数:{0}", c);
 
                         t1.Name = "落月";
+                        //thContext.Entry(t1).Property(p => p.Name).IsModified = true;
                         thContext.Entry(t1).State = EntityState.Modified;
                         c=thContext.SaveChanges();
                         Console.WriteLine("thContext的SaveChanges影响的行数:{0}", c);

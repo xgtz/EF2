@@ -19,6 +19,7 @@ namespace EF2.EntityConfig
             Property(p => p.Age).HasColumnName("AGE");
             Property(p => p.NationalityId).HasColumnName("NATIONALITYID");
             HasRequired(r => r.Nationality).WithMany(r => r.Persons).HasForeignKey(r => r.NationalityId);
+            //HasRequired(r => r.Nationality).WithMany(r => r.Persons).Map(m => m.MapKey("NATIONALITYID"));
             ToTable("T_PERSON");
             
         }

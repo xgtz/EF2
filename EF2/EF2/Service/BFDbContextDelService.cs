@@ -20,12 +20,15 @@ namespace EF2.Service
                     context.Database.Log = Console.WriteLine;
                     try
                     {
+                        //var p = context.Person.AsNoTracking().FirstOrDefault(d=>d.Id==1);
                         var p = context.Person.Find(1);
                         Console.WriteLine(string.Format("{0}---{1}", p.Nationality.Id, p.Nationality.Name));
 
+                        //context.Person.Attach(p);
                         context.Entry(p.Nationality).State = EntityState.Deleted;
-                        context.Entry(p).State = EntityState.Deleted;
                         
+                        context.Entry(p).State = EntityState.Deleted;
+                        //context.Entry(p).CurrentValues.SetValues = p;
                         int c =  context.SaveChanges();
                         
                         Console.WriteLine(string.Format("删除人员信息的返回值:{0}", c));
